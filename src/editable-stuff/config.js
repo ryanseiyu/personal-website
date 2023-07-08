@@ -10,6 +10,8 @@ const mainBody = {
   middleName: "Seiyu",
   lastName: "Yamaguchi Kimura",
   message: " Passionate about changing the world with technology. ",
+  // Apaixonado por mudar o mundo com tecnologia.
+  
   icons: [
     {
       image: "fa-github",
@@ -54,9 +56,11 @@ const about = {
   imageLink: require("../editable-stuff/ryanseiyu.png"),
   imageSize: 375,
   message:
-    "My name is Hashir Shoaib. I'm a graduate of 2020 from National University of Sciences and Technology at Islamabad with a degree in Computer Engineering. I'm most passionate about giving back to the community, and my goal is to pursue this passion within the field of software engineering. In my free time I like working on open source projects.",
+    "Hi my name is Ryan Seiyu, my passion for electrical engineering and software development fuels my drive to create innovative solutions that make a meaningful impact. I am eager to take on new challenges, leverage my skills, and contribute to exciting projects. If you're seeking a dedicated and versatile professional who can bring expertise in electrical engineering and full stack development to the table, I would be thrilled to collaborate with you. Let's build something remarkable together!",
+    // A minha paixão pela engenharia elétrica e desenvolvimento de software alimenta o meu impulso para criar soluções inovadoras que tenham um impacto significativo. Estou ansioso para enfrentar novos desafios, aproveitar as minhas habilidades e contribuir para projetos empolgantes. Se você está procurando por um profissional dedicado e versátil, capaz de trazer expertise em engenharia elétrica e desenvolvimento full stack para a mesa, ficarei emocionado em colaborar com você. Vamos construir algo notável juntos!
   resume: "https://curriculo-nu-mauve.vercel.app/",
 };
+
 
 // PROJECTS SECTION
 // Setting up project lenght will automatically fetch your that number of recently updated projects, or you can set this field 0 to show none.
@@ -100,22 +104,22 @@ const skills = {
   show: true,
   heading: "Skills",
   hardSkills: [
-    { name: "Python", value: 90 },
-    { name: "SQL", value: 75 },
-    { name: "Data Structures", value: 85 },
+    { name: "React", value: 80 },
+    { name: "JavaScript", value: 80 },
+    { name: "HTML/CSS", value: 90 },
     { name: "C/C++", value: 65 },
-    { name: "JavaScript", value: 90 },
-    { name: "React", value: 65 },
-    { name: "HTML/CSS", value: 55 },
+    { name: "Python", value: 60 },
+    { name: "SQL", value: 60 },
+    { name: "Data Structures", value: 60 },
     { name: "C#", value: 80 },
   ],
   softSkills: [
     { name: "Goal-Oriented", value: 80 },
-    { name: "Collaboration", value: 90 },
-    { name: "Positivity", value: 75 },
-    { name: "Adaptability", value: 85 },
-    { name: "Problem Solving", value: 75 },
-    { name: "Empathy", value: 90 },
+    { name: "Collaboration", value: 80 },
+    { name: "Positivity", value: 85 },
+    { name: "Adaptability", value: 65 },
+    { name: "Problem Solving", value: 90 },
+    { name: "Empathy", value: 80 },
     { name: "Organization", value: 70 },
     { name: "Creativity", value: 90 },
   ],
@@ -127,6 +131,7 @@ const getInTouch = {
   heading: "Get In Touch",
   message:
     "I'm currently looking for full-time Software Engineering or Machine Learning opportunities! If you know of any positions available, if you have any questions, or if you just want to say hi, please feel free to email me at",
+    // Atualmente, estou em busca de oportunidades em tempo integral na área de Engenharia de Software ou Aprendizado de Máquina! Se você souber de alguma vaga disponível, tiver alguma pergunta ou simplesmente quiser dizer oi, sinta-se à vontade para me enviar um e-mail para
   email: "ryanseiyu@gmail.com",
 };
 
