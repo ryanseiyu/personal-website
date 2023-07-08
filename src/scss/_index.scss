@@ -30,13 +30,13 @@ code {
     #9b59b6,
     #ff7f7f,
     #ecf0f1
-  );*/
+  ); */
 
   background-size: 1200% 1200%;
-  -webkit-animation: BackgroundAnimation 70s ease infinite;
-  -moz-animation: BackgroundAnimation 70s ease infinite;
-  -o-animation: BackgroundAnimation 70s ease infinite;
-  animation: BackgroundAnimation 70s ease infinite;
+  -webkit-animation: BackgroundAnimation 20s ease infinite;
+  -moz-animation: BackgroundAnimation 20s ease infinite;
+  -o-animation: BackgroundAnimation 20s ease infinite;
+  animation: BackgroundAnimation 20s ease infinite;
   height: 100%;
 }
 
@@ -52,11 +52,18 @@ code {
   background-color: rgba(234, 236, 239, 0.81);
   transition: background-color 0.2s;
 }
+.navbar-brand {
+  color: #797979;
+  &:hover {
+    color: #797979;
+  }
+}
 .brand {
   color: #363636 !important;
 }
 .nav-item {
   transition: color, 0.2s;
+  color: #797979;
 }
 .toggler {
   border: none;
