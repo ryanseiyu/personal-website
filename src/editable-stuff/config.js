@@ -72,7 +72,7 @@ const repos = {
   heading: "Recent Projects",
   gitHubUsername: "ryanseiyu", //i.e."johnDoe12Gh"
   reposLength: 0,
-  specificRepos: ["agenda-contatos","aniversario","loja-de-chocolate",'LojaVirtual'],
+  specificRepos: ["agenda-contatos","questrade-hackaton","loja-de-chocolate",'LojaVirtual'],
 };
 
 // Leadership SECTION
