@@ -2,9 +2,21 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Typist from 'react-typist-component';
 import { Jumbotron } from "./migration";
+import { useSelector } from 'react-redux'
 
 const MainBody = React.forwardRef(
   ({ gradient, title, message, icons }, ref) => {
+
+    const setLanguage = useSelector((state) => state.estado.value)
+    // let message = " Passionate about changing the world with technology. ";
+    let botao = "More about me";
+    if (setLanguage === false) {
+      message = " Apaixonado por mudar o mundo com tecnologia. "
+      botao = "Mais sobre mim"
+    } else {
+      message = " Passionate about changing the world with technology. "
+    }
+
     return (
       <Jumbotron
         fluid
@@ -20,7 +32,7 @@ const MainBody = React.forwardRef(
           <h1 ref={ref} className="display-1">
             {title}
           </h1>
-          <Typist>
+          <Typist restartKey={message}>
             <div className="lead typist">
               {message}
             </div>
@@ -44,7 +56,7 @@ const MainBody = React.forwardRef(
             role="button"
             aria-label="Learn more about me"
           >
-            More about me
+            {botao}
           </a>
         </Container>
       </Jumbotron>

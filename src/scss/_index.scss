@@ -49,26 +49,27 @@ code {
   transition: background-color 0.2s;
 }
 .navbar-white {
-  background-color: rgba(234, 236, 239, 0.81);
+  background-color: rgba(109, 109, 109, 0.81);
   transition: background-color 0.2s;
 }
 .navbar-brand {
-  color: #797979;
+  color: #fff;
   &:hover {
-    color: #797979;
+    color: #fff;
   }
 }
 .brand {
-  color: #363636 !important;
+  color: #fff !important;
 }
 .nav-item {
   transition: color, 0.2s;
-  color: #797979;
+  color: #fff;
 }
 .toggler {
   border: none;
   padding: 4px;
   border-radius: 4px;
+  color
   &:focus {
     outline: none;
     background-color: rgba(0, 0, 0, 0.05);
@@ -135,4 +136,33 @@ code {
   & > * {
     animation: progress 1.5s ease-in-out forwards;
   }
+}
+
+.buttonLanguage {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font: -apple-system;
+  font-size: 20px;
+  font-weight: 300;
+  // @media (min-width: 768px) {
+  //   padding: 8px 0;
+  //   display: flex
+  // }
+  @media (min-width: 0) {
+    padding: 7px 0;
+    display: flex;
+    font-size: 17.5px;
+  }
+  @media (min-width: 768px) {
+    padding: 8px 0;
+    font-size: 20px;
+  }
+  @media (min-width: 992px) {
+    padding: 8px;
+  }
+}
+
+.test {
+  width: 20px;
 }

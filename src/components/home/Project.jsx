@@ -4,6 +4,7 @@ import { Jumbotron } from "./migration";
 import Row from "react-bootstrap/Row";
 import ProjectCard from "./ProjectCard";
 import axios from "axios";
+import { useSelector } from 'react-redux'
 
 const dummyProject = {
   name: null,
@@ -53,6 +54,11 @@ const Project = ({ heading, username, length, specfic }) => {
   useEffect(() => {
     fetchRepos();
   }, [fetchRepos]);
+
+  const setLanguage = useSelector((state) => state.estado.value)
+  if (setLanguage === false) {
+    heading = "Projetos recentes"
+  }
 
   return (
     <Jumbotron fluid id="projects" className="bg-light m-0">

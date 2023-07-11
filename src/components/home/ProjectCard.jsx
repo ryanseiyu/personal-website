@@ -53,6 +53,7 @@ const CardButtons = ({ svn_url }) => {
   );
 };
 
+//Language: como linguagem de progamação
 const Language = ({ languages_url, repo_url }) => {
   const [data, setData] = useState([]);
 

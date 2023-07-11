@@ -2,6 +2,7 @@ import React from "react";
 
 import axios from "axios";
 import { Jumbotron } from "./migration";
+import { useSelector } from 'react-redux'
 
 const pictureLinkRegex = new RegExp(
   /[(http(s)?):(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
@@ -32,42 +33,49 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
   }, [link]);
 
 
+  const setLanguage = useSelector((state) => state.estado.value)
+  let headingResume = "Resume";
+  if (setLanguage === false) {
+    message = "A minha paixão pela engenharia elétrica e desenvolvimento de software alimenta o meu impulso para criar soluções inovadoras que tenham um impacto significativo. Estou ansioso para enfrentar novos desafios, aproveitar as minhas habilidades e contribuir para projetos empolgantes. Se você está procurando por um profissional dedicado e versátil, capaz de trazer expertise em engenharia elétrica e desenvolvimento full stack para a mesa, ficarei emocionado em colaborar com você. Vamos construir algo notável juntos!"
+    headingResume = "Currículo"
+    heading = "Sobre mim"
+  }
 
   return (
-    <Jumbotron id="aboutme" className="m-0">
-      <div className="container row">
-        <div className="col-5 d-none d-lg-block align-self-center">
-          {showPic && (
-            <img
-              className="border border-secondary rounded-circle"
-              src={profilePicUrl}
-              alt="profilepicture"
-              width={imgSize}
-              height={imgSize}
-            />
-          )}
-        </div>
-        <div className={`col-lg-${showPic ? "7" : "12"}`}>
-          <h2 className="display-4 mb-5 text-center">{heading}</h2>
-          <p className="lead text-center">{message}</p>
-          {resume && (
-            <p className="lead text-center">
-              <a
-                className="btn btn-outline-dark btn-lg"
-                href={resume}
-                target="_blank"
-                rel="noreferrer noopener"
-                role="button"
-                aria-label="Resume/CV"
-              >
-                Resume
-              </a>
-            </p>
-          )}
-        </div>
+  <Jumbotron id="aboutme" className="m-0">
+    <div className="container row">
+      <div className="col-5 d-none d-lg-block align-self-center">
+        {showPic && (
+          <img
+            className="border border-secondary rounded-circle"
+            src={profilePicUrl}
+            alt="profilepicture"
+            width={imgSize}
+            height={imgSize}
+          />
+        )}
       </div>
-    </Jumbotron>
-  );
+      <div className={`col-lg-${showPic ? "7" : "12"}`}>
+        <h2 className="display-4 mb-5 text-center">{heading}</h2>
+        <p className="lead text-center">{message}</p>
+        {resume && (
+          <p className="lead text-center">
+            <a
+              className="btn btn-outline-dark btn-lg"
+              href={resume}
+              target="_blank"
+              rel="noreferrer noopener"
+              role="button"
+              aria-label="Resume/CV"
+            >
+              {headingResume}
+            </a>
+          </p>
+        )}
+      </div>
+    </div>
+  </Jumbotron>
+);
 };
 
 export default AboutMe;

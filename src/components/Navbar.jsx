@@ -5,6 +5,9 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
+import {Button} from "./Button"
+import { useSelector } from 'react-redux'
+import Toggler from '../editable-stuff/burguer.svg'
 
 const Navigation = React.forwardRef((props, ref) => {
   // const { showBlog, FirstName } = config;
@@ -13,6 +16,7 @@ const Navigation = React.forwardRef((props, ref) => {
   const navbarMenuRef = React.useRef();
   const navbarDimensions = useResizeObserver(navbarMenuRef);
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
+
   useScrollPosition(
     ({ prevPos, currPos }) => {
       if (!navbarDimensions) return;
@@ -31,6 +35,18 @@ const Navigation = React.forwardRef((props, ref) => {
       : setIsTop(true);
   }, [navBottom, navbarDimensions, ref, scrollPosition]);
 
+  const setLanguage = useSelector((state) => state.estado.value)
+  let projects = "Projects";
+  let curriculo = "Resume";
+  let sobre = "About";
+  let habilidades = "Skills";
+  if (setLanguage === false) {
+    projects = "Projetos";
+    curriculo = "Currículo";
+    sobre = "Sobre";
+    habilidades = "Habilidades";
+  }
+
   return (
     <Navbar
       ref={navbarMenuRef}
@@ -41,7 +57,9 @@ const Navigation = React.forwardRef((props, ref) => {
       <Navbar.Brand className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
         {`<${mainBody.firstName} />`}
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
+      <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler">
+        <img class="test" src={Toggler} alt="Toggler"></img>
+      </Navbar.Toggle>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="navbar-nav mr-auto">
           {/* {
@@ -54,7 +72,7 @@ const Navigation = React.forwardRef((props, ref) => {
             <NavLink
               href={process.env.PUBLIC_URL + "/#projects"}
             >
-              Projects
+              {projects}
             </NavLink>
           )}
           <NavLink
@@ -63,14 +81,14 @@ const Navigation = React.forwardRef((props, ref) => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            Resume
+            {curriculo}
           </NavLink>
           {about.show && (
             <NavLink
               className="nav-item lead"
               href={process.env.PUBLIC_URL + "/#aboutme"}
             >
-              About
+              {sobre}
             </NavLink>
           )}
           {skills.show && (
@@ -78,9 +96,10 @@ const Navigation = React.forwardRef((props, ref) => {
               className="nav-item lead"
               href={process.env.PUBLIC_URL + "/#skills"}
             >
-              Skills
+              {habilidades}
             </NavLink>
           )}
+            <Button />
         </Nav>
       </Navbar.Collapse>
     </Navbar>

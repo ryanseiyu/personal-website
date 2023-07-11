@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import { Jumbotron } from "./migration";
 import { Container } from "react-bootstrap";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
+import { useSelector } from 'react-redux'
 
 const Skills = React.forwardRef(({ heading, hardSkills, softSkills }, ref) => {
   const skillsTabRef = React.useRef(null);
@@ -19,6 +20,12 @@ const Skills = React.forwardRef(({ heading, hardSkills, softSkills }, ref) => {
     [],
     skillsTabRef
   );
+
+  const setLanguage = useSelector((state) => state.estado.value)
+  if (setLanguage === false) {
+    heading = "Habilidades"
+  }
+
   return (
     <Jumbotron ref={skillsTabRef} fluid className="bg-white m-0" id="skills">
       <Container className="p-5 ">
