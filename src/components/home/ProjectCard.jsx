@@ -8,6 +8,7 @@ import chocolate from "../../../src/assets/img/chocolate.jpg";
 import daynotes from "../../../src/assets/img/daynotes.jpg";
 import efood from "../../../src/assets/img/efood.jpg";
 import placeholder from "../../../src/assets/img/470x200.gif";
+import { Link } from "react-router-dom";
 
 const ProjectCard = ({ value }) => {
 	const {
@@ -20,19 +21,24 @@ const ProjectCard = ({ value }) => {
 	} = value;
 
 	let repositoryImage = "";
+	let repositoryLink = "";
 
 	switch (value.name) {
 		case "DayNotes":
 			repositoryImage = daynotes;
+			repositoryLink = "https://github.com/ryanseiyu/DayNotes";
 			break;
 		case "questrade-hackaton":
 			repositoryImage = hackaton;
+			repositoryLink = "https://questrade-hackaton.vercel.app/";
 			break;
 		case "loja-de-chocolate":
 			repositoryImage = chocolate;
+			repositoryLink = "https://loja-de-chocolate.vercel.app/";
 			break;
 		case "efood":
 			repositoryImage = efood;
+			repositoryLink = "https://efood-psi.vercel.app/";
 			break;
 		default:
 			repositoryImage = placeholder;
@@ -42,7 +48,9 @@ const ProjectCard = ({ value }) => {
 		<Col md={6}>
 			<Card className="card shadow-lg p-3 mb-5 bg-white rounded">
 				<Card.Body>
-					<Card.Img variant="top" src={repositoryImage} />
+					<Link to={repositoryLink}>
+						<Card.Img variant="top" src={repositoryImage} />
+					</Link>
 					<Card.Title className="mt-3" as="h5">
 						{name || <Skeleton />}{" "}
 					</Card.Title>
