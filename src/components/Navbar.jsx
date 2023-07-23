@@ -26,7 +26,7 @@ const Navigation = React.forwardRef((props, ref) => {
 
 	return (
 		<Navbar
-			ref={navbarMenuRef}
+			// ref={navbarMenuRef}
 			className={`px-3 fixed-top navbar-white`}
 			expand="lg"
 		>
