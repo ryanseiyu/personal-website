@@ -26,7 +26,7 @@ const Navigation = React.forwardRef((props, ref) => {
 
 	return (
 		<Navbar
-			// ref={navbarMenuRef}
+			ref={navbarMenuRef}
 			className={`px-3 fixed-top navbar-white`}
 			expand="lg"
 		>
@@ -40,7 +40,7 @@ const Navigation = React.forwardRef((props, ref) => {
 			<Navbar.Toggle aria-controls="basic-navbar-nav">
 				<img class="test" src={Toggler} alt="Toggler"></img>
 			</Navbar.Toggle>
-			<Navbar.Collapse id="basic-navbar-nav">
+			<Navbar.Collapse>
 				<Nav className="navbar-nav mr-auto">
 					{/* {
             <NavLink className="nav-item lead">

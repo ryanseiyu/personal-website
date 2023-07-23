@@ -42,7 +42,7 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
 	}
 
 	return (
-		<Jumbotron className="m-0">
+		<Jumbotron id="aboutme" className="m-0">
 			<div id="aboutMeContainer" className="container row">
 				<div id="imageContainer" className="col-5 align-self-center">
 					{showPic && (
