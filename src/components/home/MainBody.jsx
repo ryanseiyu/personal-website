@@ -1,67 +1,66 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Typist from 'react-typist-component';
+import Typist from "react-typist-component";
 import { Jumbotron } from "./migration";
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 
 const MainBody = React.forwardRef(
-  ({ gradient, title, message, icons }, ref) => {
+	({ gradient, title, message, icons }, ref) => {
+		const setLanguage = useSelector((state) => state.estado.value);
+		// let message = " Passionate about changing the world with technology. ";
+		let botao = "More about me";
+		if (setLanguage === false) {
+			message = " Apaixonado por mudar o mundo com tecnologia. ";
+			botao = "Mais sobre mim";
+		} else {
+			message = " Passionate about changing the world with technology. ";
+		}
 
-    const setLanguage = useSelector((state) => state.estado.value)
-    // let message = " Passionate about changing the world with technology. ";
-    let botao = "More about me";
-    if (setLanguage === false) {
-      message = " Apaixonado por mudar o mundo com tecnologia. "
-      botao = "Mais sobre mim"
-    } else {
-      message = " Passionate about changing the world with technology. "
-    }
-
-    return (
-      <Jumbotron
-      fluid
-      id="home"
-      style={{
-        background: `linear-gradient(136deg,${gradient})`,
-        backgroundSize: "1200% 1200%",
-      }}
-      className="title bg-transparent bgstyle text-light min-vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
-      >
-        <div id="stars"></div>
-        <Container className="text-center">
-          <h1 ref={ref} className="display-1">
-            {title}
-          </h1>
-          <Typist restartKey={message}>
-            <div className="lead typist">
-              {message}
-            </div>
-          </Typist>
-          <div className="p-5">
-            {icons.map((icon, index) => (
-              <a
-                key={`social-icon-${index}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={icon.url}
-                aria-label={`My ${icon.image.split("-")[1]}`}
-              >
-                <i className={`fab ${icon.image}  fa-3x socialicons`} />
-              </a>
-            ))}
-          </div>
-          <a
-            className="btn btn-outline-light btn-lg "
-            href="#aboutme"
-            role="button"
-            aria-label="Learn more about me"
-          >
-            {botao}
-          </a>
-        </Container>
-      </Jumbotron>
-    );
-  }
+		return (
+			<Jumbotron
+				fluid
+				id="home"
+				style={{
+					background: `linear-gradient(136deg,${gradient})`,
+					backgroundSize: "1200% 1200%",
+				}}
+				className="title bg-transparent bgstyle text-light min-vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
+			>
+				<div id="stars"></div>
+				<Container className="text-center">
+					<h1 ref={ref} className="display-1">
+						{title}
+					</h1>
+					<Typist restartKey={message}>
+						<div className="lead typist">{message}</div>
+					</Typist>
+					<div className="p-5">
+						{icons.map((icon, index) => (
+							<a
+								key={`social-icon-${index}`}
+								target="_blank"
+								rel="noopener noreferrer"
+								href={icon.url}
+								aria-label={`My ${icon.image.split("-")[1]}`}
+							>
+								<i
+									className={`fab ${icon.image}  fa-3x socialicons`}
+								/>
+							</a>
+						))}
+					</div>
+					<a
+						className="btn btn-outline-light btn-lg "
+						href="#aboutme"
+						role="button"
+						aria-label="Learn more about me"
+					>
+						{botao}
+					</a>
+				</Container>
+			</Jumbotron>
+		);
+	}
 );
 
 export default MainBody;
