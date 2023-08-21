@@ -49,11 +49,11 @@ code {
 	transition: background-color 0.2s;
 }
 .navbar-white {
-	background-color: rgba(109, 109, 109, 0.81);
+	background-color: white;
 	transition: background-color 0.2s;
 }
 .navbar-brand {
-	color: #fff;
+	color: #000000;
 	&:hover {
 		color: #fff;
 	}
@@ -63,7 +63,7 @@ code {
 }
 .nav-item {
 	transition: color, 0.2s;
-	color: #fff;
+	color: #000000;
 }
 .toggler {
 	border: none;
@@ -139,7 +139,7 @@ code {
 
 .buttonLanguage {
 	background-color: transparent;
-	color: #fff;
+	color: #000000;
 	border: none;
 	font: -apple-system;
 	font-size: 20px;
