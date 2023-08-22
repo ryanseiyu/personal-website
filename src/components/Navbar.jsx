@@ -5,7 +5,7 @@ import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
 import { Button } from "./Button";
 import { useSelector } from "react-redux";
-import Toggler from "../editable-stuff/burguer.svg";
+import Toggler from "../editable-stuff/burguer.png";
 
 const Navigation = React.forwardRef((props, ref) => {
 	// const { showBlog, FirstName } = config;
