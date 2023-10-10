@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useCallback } from "react";
-import Container from "react-bootstrap/Container";
-import { Jumbotron } from "./migration";
-import Row from "react-bootstrap/Row";
-import ProjectCard from "./ProjectCard";
 import axios from "axios";
-import { useSelector } from 'react-redux'
+import React, { useCallback, useEffect, useState } from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import { useSelector } from 'react-redux';
+import ProjectCard from "./ProjectCard";
+import { Jumbotron } from "./migration";
 
 const dummyProject = {
   name: null,
@@ -15,8 +15,6 @@ const dummyProject = {
   pushed_at: null,
 };
 const API = "https://api.github.com";
-// const gitHubQuery = "/repos?sort=updated&direction=desc";
-// const specficQuerry = "https://api.github.com/repos/hashirshoaeb/";
 
 const Project = ({ heading, username, length, specfic }) => {
   const allReposAPI = `${API}/users/${username}/repos?sort=updated&direction=desc`;

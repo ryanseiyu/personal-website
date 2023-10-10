@@ -22,7 +22,7 @@
 
    ```js
    const repoURL =
-     "https://github.com/<your-username>/<your-username>.github.io.git";
+   	"https://github.com/<your-username>/<your-username>.github.io.git";
    ```
 
 9. To deploy website, run:
@@ -38,4 +38,4 @@
       https://<your-username>.github.io
     ```
 
-Facing issues? Feel free to contact at hashirshoaeb@gmail.com.
+Facing issues? Feel free to contact at ryanseiyu@gmail.com
