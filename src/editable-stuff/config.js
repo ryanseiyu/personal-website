@@ -89,14 +89,12 @@ const leadership = {
 		{
 			img: require("../editable-stuff/ryanseiyu.png"),
 			label: "First slide label",
-			paragraph:
-				"Nulla vitae elit libero, a pharetra augue mollis interdum.",
+			paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
 		},
 		{
 			img: require("../editable-stuff/ryanseiyu.png"),
 			label: "Second slide label",
-			paragraph:
-				"Nulla vitae elit libero, a pharetra augue mollis interdum.",
+			paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
 		},
 	],
 	imageSize: {
@@ -110,16 +108,16 @@ const skills = {
 	show: true,
 	heading: "Skills",
 	hardSkills: [
-		{ name: "React", value: 100 },
-		{ name: "JavaScript", value: 100 },
-		{ name: "HTML/CSS", value: 100 },
+		{ name: "React", value: 90 },
+		{ name: "JavaScript", value: 90 },
+		{ name: "HTML/CSS", value: 90 },
 		{ name: "Java", value: 100 },
-		{ name: "SQL, MongoDB, NoSQL", value: 100 },
-		{ name: "Electrical Engineering", value: 100 },
-		{ name: "Photoshop", value: 100 },
-		{ name: "Stable Diffusion (AI Image Generation)", value: 100 },
-		{ name: "Excel, PowerBI", value: 100 },
-		{ name: "Github Copilot AI", value: 100 },
+		{ name: "SQL, MongoDB, NoSQL", value: 80 },
+		{ name: "Electrical Engineering", value: 80 },
+		{ name: "Photoshop", value: 60 },
+		{ name: "Stable Diffusion (AI Image Generation)", value: 80 },
+		{ name: "Excel, PowerBI", value: 70 },
+		{ name: "Github Copilot AI", value: 90 },
 	],
 	softSkills: [
 		{ name: "C/C++", value: 50 },
@@ -166,12 +164,12 @@ const experiences = {
 // };
 
 export {
-	navBar,
-	mainBody,
 	about,
+	experiences,
+	getInTouch,
+	leadership,
+	mainBody,
+	navBar,
 	repos,
 	skills,
-	leadership,
-	getInTouch,
-	experiences,
 };
